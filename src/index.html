@@ -3,34 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Agents List</title>
+  <title>DAB Dynamic Entities</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    ul { list-style: none; padding: 0; }
+    li { margin: 8px 0; }
+    a { text-decoration: none; color: #0366d6; }
+  </style>
 </head>
 <body>
-  <main>
-    <h1>Agents</h1>
-    <ul id="agentsList"></ul>
-  </main>
+  <h1>Accessible Entities</h1>
+  <div id="entityList">Loading...</div>
 
   <script>
-    async function fetchAgents() {
+    async function fetchUserRoles() {
+      const res = await fetch("/.auth/me");
+      const data = await res.json();
+      const roles = data.clientPrincipal?.userRoles || [];
+      return roles;
+    }
+
+    async function fetchEntitiesForRoles(roles) {
+      // Define the available entities and which roles can access them
+      const accessMap = {
+        "authenticated": ["Agents", "Customers", "Orders"],
+        "admin": ["Agents", "Customers", "Orders", "SensitiveData"]
+      };
+
+      const accessibleEntities = new Set();
+
+      roles.forEach(role => {
+        const entities = accessMap[role];
+        if (entities) entities.forEach(e => accessibleEntities.add(e));
+      });
+
+      return Array.from(accessibleEntities);
+    }
+
+    async function renderEntities() {
+      const entityListDiv = document.getElementById("entityList");
+
       try {
-        const response = await fetch('/api/agents');
-        if (!response.ok) {
-          throw new Error('Failed to fetch');
+        const roles = await fetchUserRoles();
+        const entities = await fetchEntitiesForRoles(roles);
+
+        if (entities.length === 0) {
+          entityListDiv.innerHTML = "<p>No accessible entities for your role.</p>";
+          return;
         }
-        const agents = await response.json();
-        const list = document.getElementById('agentsList');
-        agents.value.forEach(agent => {
-          const li = document.createElement('li');
-          li.textContent = JSON.stringify(agent);
-          list.appendChild(li);
+
+        const ul = document.createElement("ul");
+        entities.forEach(entity => {
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = `/api/${entity}`;
+          a.textContent = entity;
+          li.appendChild(a);
+          ul.appendChild(li);
         });
-      } catch (error) {
-        console.error('Error fetching agents:', error);
+
+        entityListDiv.innerHTML = "";
+        entityListDiv.appendChild(ul);
+      } catch (err) {
+        console.error(err);
+        entityListDiv.innerHTML = "<p>Error fetching data.</p>";
       }
     }
 
-    fetchAgents();
+    renderEntities();
   </script>
 </body>
 </html>
