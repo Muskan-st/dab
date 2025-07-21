@@ -1,0 +1,21 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html"
+  },
+  "auth": {
+    "identityProviders": {
+      "azureActiveDirectory": {
+        "registration": {
+          "openIdIssuer": "https://login.microsoftonline.com/dc6ae6cf-cff1-439f-b4bf-6863ebabeddb/v2.0",
+          "clientIdSettingName": "AAD_CLIENT_ID"
+        }
+      }
+    }
+  },
+  "routes": [
+    {
+      "route": "/api/*",
+      "allowedRoles": ["authenticated"]
+    }
+  ]
+}
