@@ -1,6 +1,7 @@
 {
   "navigationFallback": {
-    "rewrite": "coreservicesappservicedev-c3e7e7d4a6a5d3dt.centralindia-01.azurewebsites.net"
+    "rewrite": "/index.html",
+    "exclude": ["/api/*"]
   },
   "auth": {
     "identityProviders": {
@@ -19,6 +20,8 @@
     },
     {
       "route": "/api/*",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["authenticated"],
+      "rewrite": "https://coreservicesappservicedev-c3e7e7d4a6a5d3dt.centralindia-01.azurewebsites.net/api/"
     }
   ]
+}
