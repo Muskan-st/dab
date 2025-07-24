@@ -1,6 +1,6 @@
 {
   "navigationFallback": {
-    "rewrite": "/index.html"
+    "rewrite": "coreservicesappservicedev-c3e7e7d4a6a5d3dt.centralindia-01.azurewebsites.net"
   },
   "auth": {
     "identityProviders": {
