@@ -45,7 +45,7 @@
       },
       "permissions": [
         {
-          "role": "Melody",
+          "role": "melody",
           "actions": [
             {
               "action": "*"
@@ -71,7 +71,7 @@
       },
       "permissions": [
         {
-          "role": "Melody",
+          "role": "anonymous",
           "actions": [
             {
               "action": "*"
