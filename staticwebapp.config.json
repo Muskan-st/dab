@@ -21,7 +21,7 @@
     {
       "route": "/api/*",
       "allowedRoles": ["authenticated"],
-      "rewrite": "https://melody-api-dev-dab.ashymoss-d28aa94e.centralindia.azurecontainerapps.io/api/"
+      "rewrite": "https://melody-api-dev-dab.ashymoss-d28aa94e.centralindia.azurecontainerapps.io"
     }
   ]
 }
