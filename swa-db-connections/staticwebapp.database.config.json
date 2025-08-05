@@ -45,7 +45,7 @@
       },
       "permissions": [
         {
-          "role": "Reader",
+          "role": "melody",
           "actions": [
             {
               "action": "*"
