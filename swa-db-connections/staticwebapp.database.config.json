@@ -48,15 +48,15 @@
           "role": "melody",
           "actions": [
             {
-              "action": "create", "read"
+              "action": "*"
             }
           ]
         }
       ]
     },
-     "call_logs": {
+     "call": {
       "source": {
-        "object": "agents",
+        "object": "call_logs",
         "type": "table"
       },
       "graphql": {
