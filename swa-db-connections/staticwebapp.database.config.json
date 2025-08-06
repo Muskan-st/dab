@@ -62,8 +62,8 @@
       "graphql": {
         "enabled": true,
         "type": {
-          "singular": "agents",
-          "plural": "agents"
+          "singular": "call",
+          "plural": "calls"
         }
       },
       "rest": {
