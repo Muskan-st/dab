@@ -48,7 +48,33 @@
           "role": "melody",
           "actions": [
             {
-              "action": "*"
+              "action": "create", "read"
+            }
+          ]
+        }
+      ]
+    },
+     "call_logs": {
+      "source": {
+        "object": "agents",
+        "type": "table"
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "agents",
+          "plural": "agents"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "melody",
+          "actions": [
+            {
+              "action": "read"
             }
           ]
         }
