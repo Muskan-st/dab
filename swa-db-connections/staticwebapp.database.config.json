@@ -67,11 +67,7 @@
         }
       },
       "rest": {
-        "enabled": true,
-        "type": {
-          "singular": "call",
-          "plural": "calls"
-        }
+        "enabled": true
       },
       "permissions": [
         {
