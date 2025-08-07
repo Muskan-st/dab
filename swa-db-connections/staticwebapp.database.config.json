@@ -22,14 +22,9 @@
         "allow-credentials": false
       },
       
-  "auth":
- {
-    "identityProviders": {"azureActiveDirectory": 
-    {"registration":
-     {"clientIdSettingName": "f9dda07a-de9a-414a-aad9-8e28f58457bf",
-     "clientSecretSettingName": "SPh8Q~uumYDgWlGq~Yz01CnvV1XEKDrWVYcaDdbG",
-     "openIdIssuer": "https://login.microsoftonline.com/dc6ae6cf-cff1-439f-b4bf-6863ebabeddb/v2.0"}}}},
- 
+  "authentication": {
+  "provider": "StaticWebApps"
+  },
       
       "mode": "development"
     }
@@ -52,7 +47,7 @@
       },
       "permissions": [
         {
-          "role": "authenticated",
+          "role": "anonymous",
           "actions": [
             {
               "action": "*"
@@ -78,10 +73,10 @@
       },
       "permissions": [
         {
-          "role": "*",
+          "role": "anonymous",
           "actions": [
             {
-              "action": "read"
+              "action": "*"
             }
           ]
         }
