@@ -72,7 +72,6 @@
       },
       "permissions": [
         {
-          "role": "authenticated",
           "actions": [
             {
               "action": "read"
