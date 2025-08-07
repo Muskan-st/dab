@@ -1,1 +1,1 @@
-{"routes":[],"auth":{"rolesSource":"https://melody-api-dev.azure-api.net/dab-api","identityProviders":{"azureActiveDirectory":{"registration":{"openIdIssuer":"https://login.microsoftonline.com/dc6ae6cf-cff1-439f-b4bf-6863ebabeddb","clientIdSettingName":"AZURE_CLIENT_ID","clientSecretSettingName":"AZURE_CLIENT_SECRET_APP_SETTING_NAME"}}}}}
+{"routes":[]}
