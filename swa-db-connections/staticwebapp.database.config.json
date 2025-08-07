@@ -23,7 +23,7 @@
       },
       "authentication": {
   "provider": "AzureActiveDirectory",
-  "client-id": "35c2a2da-ed83-4312-99ba-85d25b4686a6",
+  "client-id": "f9dda07a-de9a-414a-aad9-8e28f58457bf",
   "tenant-id": "dc6ae6cf-cff1-439f-b4bf-6863ebabeddb"
       },
       "mode": "production"
