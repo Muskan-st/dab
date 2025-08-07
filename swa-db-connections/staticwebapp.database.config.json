@@ -22,9 +22,8 @@
         "allow-credentials": false
       },
       "authentication": {
-  "provider": "AzureActiveDirectory",
-  "client-id": "f9dda07a-de9a-414a-aad9-8e28f58457bf",
-  "tenant-id": "dc6ae6cf-cff1-439f-b4bf-6863ebabeddb"
+  "provider": "StaticWebApps",
+ 
       },
       "mode": "development"
     }
